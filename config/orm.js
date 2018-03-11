@@ -14,9 +14,9 @@
 //     })
 //   },
 
-//   insertOne: function(table, colVal1, colVal2, userInput1, userInput2) {
+//   insertOne: function(table, colVal, burgerData) {
 //     // query string with insert into
-//     var queryString = "INSERT INTO ?? (?, ?) values( ?, ?)"
+//     var queryString = "UPDATE burgers SET ?"
 //     // column names
 //     connection.query(
 //       queryString,

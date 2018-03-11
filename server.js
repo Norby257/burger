@@ -19,9 +19,11 @@ app.set("view engine", "handlebars")
 
 //  hwere we set up our own modules
 
-var routes = require("./controllers/burgersControllers")
+var routes = require("./controllers/burgers_controller")
 
 app.use(routes)
+
+
 
 //  starting the server
 app.listen(PORT, function() {

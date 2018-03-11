@@ -7,6 +7,5 @@ Burger.selectAll(function (err, data) {
     console.log(data);
 });
 
-Burger.selectAll();
 
 // Burger.updateOne(function ( err, dat))

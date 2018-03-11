@@ -1,5 +1,10 @@
 var connection = require("../config/connection");
 
+
+//  and then require the orm functions too - this is prolly why 
+
+// var orm = require("../config/orm.js");
+
 //  burger data being stored in an object (constructor)? 
 
 var Burger = function(burgerName, devoured) {
@@ -8,18 +13,18 @@ var Burger = function(burgerName, devoured) {
     this.devoured = devoured;
 
 }
-//  orm functions here 
-Burger.selectAll = function(whatToSelect, tableInput) {
-    connection.query("SELECT * FROM burgers;");
+//  orm functions here - testing this with the actual values
+Burger.selectAll = function(burger) {
+    connection.query("SELECT * FROM burgers;", burger);
 
 }
+//  this is put request 
+// Burger.updateOne = function(criteria, cb) {
+//     connection.query("UPDATE burgers SET ? WHERE ?;", criteria, cb);
+// }
 
-Burger.updateOne = function(table, colVal, userInput) {
-    connection.query("UPDATE burgers SET ?", burgerData, cb);
-}
-
-
-Burger.insertOne = function(table, colVal1, colVal2, userInput1, userInput2){
+//  this is post request 
+Burger.insertOne = function(col, val, cb){
     connection.query("INSERT INTO burgers SET ?", burgerData, cb);
 }
 //  and at the end we are exporting this - will be required it 
@@ -30,7 +35,7 @@ Burger.prototype.create = function(cb) {
         devoured:  this.devoured
 
     };
-    connection.query("INSERT INTO burgers SET ?", studentData, cb);
+    connection.query("INSERT INTO burgers SET ?", burgerData, cb);
     
 }
 module.exports = Burger;
