@@ -20,5 +20,23 @@ router.get("/", function(req, res) {
   })
 })
 
+router.post("/api/burgers", function(req, res){
+  Burger.insertOne([
+    "burgerName", "devoured"
+  ], [ 
+    req.body.burgerName, req.body.devoured
+
+  ], function(result){
+    res.json({ id: result.insertId});
+  })
+
+})
+
+
+// router.put("/api/burgers", function(req, res){
+//   Burger.updateOne(function(data){
+
+//   })
+// })
 //  then we export that  and this is required in the server file
 module.exports = router;

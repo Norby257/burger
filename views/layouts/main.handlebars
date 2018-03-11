@@ -1,13 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <h1>Bob's Burgers </h1>
+
+    <!-- link to bootstrap -->
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+
+<!-- link to custom CSS -->
+<link rel="stylesheet" href="../../public/assets/style.css">
+
+
+    <!-- link to jquery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+
+
 </head>
+
 <body>
-    {{{ body }}}
+    <div class="container">
+        {{{ body }}}
+
+    <!-- input form -->
+        <form action="">
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1"> Submit a New Burger!</label>
+                <textarea class="form-control"  id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+        </form>
+    </div>
+<!-- submit button --> 
+
+<button type="button" class="btn btn-light">Submit!</button>
+
+    <script src="../../public/assets/js/burger.js"></script>
 </body>
+
 </html>

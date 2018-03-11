@@ -4,6 +4,10 @@ var bodyParser = require("body-parser")
 var app = express()
 var PORT = process.env.PORT || 3000
 
+//  servicing static content from the 'public directory'
+
+app.use(express.static("public"));
+
 //  data parsing
 
 app.use(bodyParser.urlencoded({ extended: true }))

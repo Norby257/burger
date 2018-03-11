@@ -24,8 +24,8 @@ Burger.selectAll = function(burger) {
 // }
 
 //  this is post request 
-Burger.insertOne = function(col, val, cb){
-    connection.query("INSERT INTO burgers SET ?", burgerData, cb);
+Burger.insertOne = function(Burger, cb){
+    connection.query("INSERT INTO burgers SET ?", Burger, cb);
 }
 //  and at the end we are exporting this - will be required it 
 
@@ -35,7 +35,7 @@ Burger.prototype.create = function(cb) {
         devoured:  this.devoured
 
     };
-    connection.query("INSERT INTO burgers SET ?", burgerData, cb);
+    connection.query("INSERT INTO burgers SET ?", [burgerName, devoured], cb);
     
 }
 module.exports = Burger;
