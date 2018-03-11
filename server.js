@@ -1,19 +1,21 @@
 //  node dependencies
 var express = require("express")
 var bodyParser = require("body-parser")
-var app = express()
 var PORT = process.env.PORT || 3000
+var app = express();
+
 
 //  servicing static content from the 'public directory'
 
 app.use(express.static("public"));
-
 //  data parsing
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 //  setting up Handlebars
+
+
 
 var exphbs = require("express-handlebars")
 
