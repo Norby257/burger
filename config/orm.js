@@ -1,18 +1,20 @@
-// // import { WSAEPROVIDERFAILEDINIT } from "constants"
 
-// var connection = require("./connection")
+var connection = require("./connection")
 
-// var orm = {
-//   selectAll: function(whatToSelect, tableInput) {
-//     var queryString = "SELECT ?? FROM ??"
-//     connection.query(queryString, [whatToSelect, tableInput], function(
-//       err,
-//       result
-//     ) {
-//       if (err) throw err
-//       console.log(result)
-//     })
-//   },
+var orm = {
+  selectAll: function(tableInput, cb) {
+    var queryString = `SELECT * FROM ${tableInput};`; 
+    connection.query(queryString, function(
+      err,
+      result
+    ) {
+      if (err) throw err
+      console.log(result)
+    })
+
+
+  }
+};
 
 //   insertOne: function(table, colVal, burgerData) {
 //     // query string with insert into
@@ -37,5 +39,4 @@
 //     })
 //   }
 // }
-
-// module.exports = orm
+module.exports = orm;
