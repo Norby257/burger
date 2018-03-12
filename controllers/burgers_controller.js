@@ -6,17 +6,17 @@ var express = require("express")
 var router = express.Router()
 
 //  importing out model to use the database function
-var Burger = require("../models/burger")
+var burger = require("../models/burger")
 
 
 //  here's our routes + the logic (connects to the ORM functions)
 router.get("/", function(req, res) {
-  Burger.selectAll(function(data) {
+  burger.selectAll(function(data) {
     var hbsObject = {
       burger: data
     }
     console.log(hbsObject)
-    res.render("./index", hbsObject)
+    res.render("index", hbsObject)
   })
 })
 

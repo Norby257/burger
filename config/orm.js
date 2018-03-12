@@ -9,7 +9,7 @@ var orm = {
       result
     ) {
       if (err) throw err
-      console.log(result)
+      cb(result)
     })
 
 
