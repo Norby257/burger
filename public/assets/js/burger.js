@@ -7,6 +7,8 @@ var burgers = []
 
 // when document is ready:
 $(document).ready(function() {
+
+ 
   // on click event
   $("button").on("click", function(e) {
     //   prevent form from submitting

@@ -21,8 +21,8 @@ router.get("/", function(req, res) {
 })
 
 router.post("/api/burgers", function(req, res){
-  Burger.insertOne([
-    "burgerName", "devoured"
+  burger.insertOne([
+    "burger_name", "devoured"
   ], [ 
     req.body.burgerName, req.body.devoured
 
@@ -32,11 +32,34 @@ router.post("/api/burgers", function(req, res){
 
 })
 
+//  bonus delete request 
+router.delete("/api/burgers", function(req, res){
+  var condition = `id=${req.params.id}`;
+  burger.delete(condition, function(result){
+    if (result.affectedRows == 0) {
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
+  })
+})
 
-// router.put("/api/burgers", function(req, res){
-//   Burger.updateOne(function(data){
 
-//   })
-// })
+router.put("/api/burgers/:id", function(req, res){
+  var condition = "id = " + req.params.id;
+
+  console.log("condition", condition);
+
+  burger.updateOne({
+    name: req.body.name,
+    devoured: req.body.devoured
+  }, condition, function(result){
+    if (result.changedRows == 0) {
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
+  })
+})
 //  then we export that  and this is required in the server file
 module.exports = router;

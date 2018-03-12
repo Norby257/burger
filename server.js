@@ -16,7 +16,6 @@ app.use(bodyParser.json())
 //  setting up Handlebars
 
 
-
 var exphbs = require("express-handlebars")
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }))

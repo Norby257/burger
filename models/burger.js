@@ -19,26 +19,27 @@ var burger = {
         orm.selectAll("burgers", function(res){
             cb(res);
         });
-    }
-}
+    },
 
+//  add the delete request here 
 
-//  orm functions here - testing this with the actual values
-// Burger.selectAll = function(burger) {
-//     connection.query("SELECT * FROM burgers;", burger);
-//     console.log(burger);
-
-// }
 //  this is put request 
 // Burger.updateOne = function(criteria, cb) {
 //     connection.query("UPDATE burgers SET ? WHERE ?;", criteria, cb);
 // }
 
 //  this is post request 
-// Burger.insertOne = function(Burger, cb){
-//     connection.query("INSERT INTO burgers SET ?", Burger, cb);
-// }
-//  and at the end we are exporting this - will be required it 
+insertOne: function( cols, vals, cb) {
+    orm.insertOne("burgers", cols, vals, function(res){
+        cb(res);
+    });
+},
+
+updateOne: function(obColVals, condition, cb) {
+    orm.updateOne("burgers", objColVals, condition, function(res){
+        cb(res);
+    });
+}
 
 // Burger.prototype.create = function(cb) {
 //     var burgerData = {
@@ -48,5 +49,5 @@ var burger = {
 //     };
 //     connection.query("INSERT INTO burgers SET ?", [burgerName, devoured], cb);
     
-// }
+}
 module.exports = burger;
