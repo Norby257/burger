@@ -35,19 +35,12 @@ insertOne: function( cols, vals, cb) {
     });
 },
 
-updateOne: function(obColVals, condition, cb) {
+updateOne: function(objColVals, condition, cb) {
     orm.updateOne("burgers", objColVals, condition, function(res){
         cb(res);
     });
 }
 
-// Burger.prototype.create = function(cb) {
-//     var burgerData = {
-//        burgerName:  this.burgerName, 
-//         devoured:  this.devoured
-
-//     };
-//     connection.query("INSERT INTO burgers SET ?", [burgerName, devoured], cb);
     
 }
 module.exports = burger;

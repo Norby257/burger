@@ -13,7 +13,7 @@ var burger = require("../models/burger")
 router.get("/", function(req, res) {
   burger.selectAll(function(data) {
     var hbsObject = {
-      burger: data
+      burgers: data
     }
     console.log(hbsObject)
     res.render("index", hbsObject)
@@ -24,10 +24,17 @@ router.post("/api/burgers", function(req, res){
   burger.insertOne([
     "burger_name", "devoured"
   ], [ 
-    req.body.burgerName, req.body.devoured
+    req.body.burger_name, req.body.devoured
 
   ], function(result){
-    res.json({ id: result.insertId});
+    res.json({
+      id: result.insertId,
+      burger_name: result.InsertBurger_name,
+      devoured: result.InsertDevoured
+    });
+    // res.json({ id: result.insertId});
+    // res.json({burger_name: result.burger_name});
+    // res.json({devoured: result.devoured});
   })
 
 })
@@ -51,7 +58,7 @@ router.put("/api/burgers/:id", function(req, res){
   console.log("condition", condition);
 
   burger.updateOne({
-    name: req.body.name,
+    burger_name: req.body.name,
     devoured: req.body.devoured
   }, condition, function(result){
     if (result.changedRows == 0) {

@@ -54,7 +54,7 @@ var orm = {
   insertOne: function(table, cols, vals, cb) {
       
       var queryString = "INSERT INTO " + table;
-      
+
       queryString += " (";
       queryString += cols.toString();
       queryString += ") ";
@@ -91,16 +91,4 @@ var orm = {
 
 };
 
-
-
-
-
-//   updateOne: function(table, colVal, userInput) {
-//     var queryString = "UPDATE ?? set ? = ? where id = ?"
-//     connection.query(queryString, [table, colVal, userInput], function() {
-//       if (err) throw err
-//       console.log(results)
-//     })
-//   }
-// }
 module.exports = orm;
