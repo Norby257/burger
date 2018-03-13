@@ -7,8 +7,6 @@ var burgers = []
 
 // when document is ready:
 $(document).ready(function() {
-
- 
   // on click event
   $("button").on("click", function(e) {
     //   prevent form from submitting
@@ -32,7 +30,7 @@ $(document).ready(function() {
     //        text: "Devoured?"
     //    })
 
-      //   send the POST request
+    //   send the POST request
     $.ajax("/api/burgers", {
       type: "POST",
       data: newBurger
@@ -42,26 +40,21 @@ $(document).ready(function() {
     })
   })
 
-// on click for devoured button aka put request 
-//  change devoured to TRUE 
-//   $(function() {
-//     $(".devoured").on("click", function(e) {
-//         var id = $(this).data("id");
-//         var newDevoured = $(this).data("newDevoured");
-        
-//         var newDevouredState = {
-//             devoured: newDevoured
-//         };
-//         //  sending the put req
-//         $.ajax("/api/cats" + id) {
-//             type: "PUT",
-//             data: newDevouredState
-//         }
-//     })
-// })
+  // on click for devoured button aka put request
+  //  change devoured to TRUE
+  //   $(function() {
+  //     $(".devoured").on("click", function(e) {
+  //         var id = $(this).data("id");
+  //         var newDevoured = $(this).data("newDevoured");
 
-
+  //         var newDevouredState = {
+  //             devoured: newDevoured
+  //         };
+  //         //  sending the put req
+  //         $.ajax("/api/cats" + id) {
+  //             type: "PUT",
+  //             data: newDevouredState
+  //         }
+  //     })
+  // })
 })
-
-
-

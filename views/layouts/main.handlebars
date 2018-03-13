@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Eat Da Burger!</title>
-    <h1>Eat Da Burger </h1>
 
     <!-- link to bootstrap -->
 
@@ -14,38 +13,21 @@
         crossorigin="anonymous">
 
     <!-- link to custom CSS -->
-    <link rel="stylesheet" href="/assets/style.css" type="text/css">
-    {{!-- <link rel="stylesheet" href="../../public/assets/style.css" type="text/css"> --}}
+    <link rel="stylesheet" href="/assets/style.css" type="text/css"> {{!--
+    <link rel="stylesheet" href="../../public/assets/style.css" type="text/css"> --}}
 
     <!-- link to jquery -->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
         crossorigin="anonymous"></script>
-        <!-- my own front end JS file -->
-        <script src="/assets/js/burger.js"></script>
-     {{!-- <script src="../../public/assets/js/burger.js"></script> --}}
+    <!-- my own front end JS file -->
+    <script src="/assets/js/burger.js"></script> {{!--
+    <script src="../../public/assets/js/burger.js"></script> --}}
 
 </head>
 
 <body>
-    <div class="container">
-        {{{ body }}}
+    {{{ body }}}
 
-        <!-- input form -->
-        <form action="">
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1"> Submit a New Burger!</label>
-                <textarea class="form-control" id="name" rows="3"></textarea>
-            </div>
-        </form>
-    </div>
-    <!-- submit button -->
-
-    <button type="button" class="btn btn-light">Submit!</button>
-
-    <!-- target div for entered burger names -->
-    <div class="added-burgers">
-
-    </div>
 </body>
 
 </html>
