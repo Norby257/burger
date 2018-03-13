@@ -24,17 +24,13 @@ router.post("/api/burgers", function(req, res){
   burger.insertOne([
     "burger_name", "devoured"
   ], [ 
-    req.body.burger_name, req.body.devoured
+    req.body.burger_name, '0'
 
   ], function(result){
-    res.json({
-      id: result.insertId,
-      burger_name: result.InsertBurger_name,
-      devoured: result.InsertDevoured
-    });
-    // res.json({ id: result.insertId});
-    // res.json({burger_name: result.burger_name});
-    // res.json({devoured: result.devoured});
+    res.json({id: result.insertId})
+    //  result gives me the ouputof data operation and not the data that I'd need 
+    console.log(result);
+    
   })
 
 })
