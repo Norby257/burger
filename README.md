@@ -1,4 +1,4 @@
-# burger :hamburger
+# burger :hamburger:
 
 ### This is a fun web application ultilizing the following technologies:
 * Node.js 
